@@ -14,12 +14,21 @@
 
         var name = prompt('Введите Ваше имя');
         if (name == '') {
-            name = 'Незнакомец';
+            name = 'незнакомец';
         }
         var city = prompt('Введите Ваш город');
-        var petCheck = prompt('Имеете ли Вы домашнего питомца? да/нет');
-        if (petCheck == 'да') {
+        if (city == '')
+        {
+            city = 'Kharkov';
+        }
+
+        var petCheck = confirm('Имеете ли Вы домашнего питомца? да/нет');
+        if (petCheck) {
             var pet = prompt('Введите имя Вашего питомца');
+            if (pet == '')
+            {
+                pet = 'питомец';
+            }
             alert('Привет ' + name + '. Как дела у ' + pet + ' ? Как погода в ' + city + ' ?')
         }
         else {
